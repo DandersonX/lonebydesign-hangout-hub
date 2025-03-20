@@ -56,9 +56,7 @@ const Index = () => {
             <span className="text-white">By</span>
             <span className="text-gradient">Design</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Your digital hangout for my personal music blog, regular content updates, and a curated shop of unique items.
-          </p>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">Your digital hangout for my personal blog, regular content updates, music and a curated shop of unique items.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/blog" className="bg-lbd-accent hover:bg-lbd-accent/90 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
               Read the Blog
