@@ -2,61 +2,49 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import BlurCard from "@/components/ui/BlurCard";
 import { ArrowRight, Music, Book, ShoppingBag } from "lucide-react";
-
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
-  
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-active");
-            observerRef.current?.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    observerRef.current = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-active");
+          observerRef.current?.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const animatedElements = document.querySelectorAll(".animate-on-scroll");
-    animatedElements.forEach((el) => {
+    animatedElements.forEach(el => {
       observerRef.current?.observe(el);
     });
-
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
       }
     };
   }, []);
-
-  const categories = [
-    { 
-      title: "My Music", 
-      icon: Music, 
-      description: "Check out my latest music projects, upcoming releases, and behind-the-scenes content.", 
-      link: "/music",
-      color: "from-green-500 to-emerald-600" 
-    },
-    { 
-      title: "Shop", 
-      icon: ShoppingBag, 
-      description: "Browse our collection of tech, books, vinyl, and more.", 
-      link: "/shop",
-      color: "from-amber-500 to-orange-600" 
-    },
-    { 
-      title: "Daily Blog", 
-      icon: Book, 
-      description: "Check out daily updates, opinions, and personal stories.", 
-      link: "/blog",
-      color: "from-teal-500 to-cyan-600" 
-    },
-  ];
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  const categories = [{
+    title: "My Music",
+    icon: Music,
+    description: "Check out my latest music projects, upcoming releases, and behind-the-scenes content.",
+    link: "/music",
+    color: "from-green-500 to-emerald-600"
+  }, {
+    title: "Shop",
+    icon: ShoppingBag,
+    description: "Browse our collection of tech, books, vinyl, and more.",
+    link: "/shop",
+    color: "from-amber-500 to-orange-600"
+  }, {
+    title: "Daily Blog",
+    icon: Book,
+    description: "Check out daily updates, opinions, and personal stories.",
+    link: "/blog",
+    color: "from-teal-500 to-cyan-600"
+  }];
+  return <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-lbd-dark z-10"></div>
@@ -101,13 +89,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {categories.map((category, index) => (
-              <BlurCard 
-                key={category.title} 
-                className="h-full animate-on-scroll" 
-                style={{ animationDelay: `${index * 100}ms` }}
-                hoverEffect
-              >
+            {categories.map((category, index) => <BlurCard key={category.title} className="h-full animate-on-scroll" style={{
+            animationDelay: `${index * 100}ms`
+          }} hoverEffect>
                 <div className={`h-12 w-12 rounded-full flex items-center justify-center mb-4 bg-gradient-to-br ${category.color}`}>
                   <category.icon className="h-6 w-6 text-white" />
                 </div>
@@ -116,8 +100,7 @@ const Index = () => {
                 <Link to={category.link} className="inline-flex items-center text-lbd-accent hover:text-lbd-accent/80 transition-colors">
                   Explore <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </BlurCard>
-            ))}
+              </BlurCard>)}
           </div>
         </div>
       </section>
@@ -136,19 +119,11 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item, index) => (
-              <BlurCard 
-                key={item} 
-                className="h-full animate-on-scroll" 
-                style={{ animationDelay: `${index * 100}ms` }}
-                hoverEffect
-              >
+            {[1, 2, 3].map((item, index) => <BlurCard key={item} className="h-full animate-on-scroll" style={{
+            animationDelay: `${index * 100}ms`
+          }} hoverEffect>
                 <div className="aspect-video rounded-lg overflow-hidden mb-4 bg-lbd-surface">
-                  <img 
-                    src={`https://picsum.photos/600/400?random=${index}`} 
-                    alt="Blog post" 
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-                  />
+                  <img src={`https://picsum.photos/600/400?random=${index}`} alt="Blog post" className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="text-xs text-lbd-accent mb-2">May 15, 2023</div>
                 <h3 className="text-xl font-bold mb-2">Discovering New Gaming Frontiers</h3>
@@ -158,8 +133,7 @@ const Index = () => {
                 <Link to="/blog/post-1" className="inline-flex items-center text-lbd-accent hover:text-lbd-accent/80 transition-colors">
                   Read More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </BlurCard>
-            ))}
+              </BlurCard>)}
           </div>
         </div>
       </section>
@@ -178,19 +152,11 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((item, index) => (
-              <BlurCard 
-                key={item} 
-                className="h-full animate-on-scroll" 
-                style={{ animationDelay: `${index * 100}ms` }}
-                hoverEffect
-              >
+            {[1, 2, 3, 4].map((item, index) => <BlurCard key={item} className="h-full animate-on-scroll" style={{
+            animationDelay: `${index * 100}ms`
+          }} hoverEffect>
                 <div className="aspect-square rounded-lg overflow-hidden mb-4 bg-lbd-surface">
-                  <img 
-                    src={`https://picsum.photos/400/400?random=${index + 10}`} 
-                    alt="Product" 
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
-                  />
+                  <img src={`https://picsum.photos/400/400?random=${index + 10}`} alt="Product" className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="text-xs text-lbd-accent mb-1">PC Components</div>
                 <h3 className="text-lg font-bold mb-1">RGB Gaming Keyboard</h3>
@@ -201,8 +167,7 @@ const Index = () => {
                     View
                   </Link>
                 </div>
-              </BlurCard>
-            ))}
+              </BlurCard>)}
           </div>
         </div>
       </section>
@@ -210,28 +175,18 @@ const Index = () => {
       {/* Newsletter */}
       <section className="py-20 px-6 bg-gradient-to-br from-lbd-darker to-lbd-dark">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Join the LBD Community</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Join the LoneByDesign Community</h2>
           <p className="text-lbd-muted mb-8 animate-on-scroll">
             Subscribe to our newsletter and never miss an update. Get the latest content, product launches, and exclusive offers directly to your inbox.
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto animate-on-scroll">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-lbd-accent text-white"
-              required
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-lbd-accent hover:bg-lbd-accent/90 text-white font-medium rounded-lg transition-colors"
-            >
+            <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-lbd-accent text-white" required />
+            <button type="submit" className="px-6 py-3 bg-lbd-accent hover:bg-lbd-accent/90 text-white font-medium rounded-lg transition-colors">
               Subscribe
             </button>
           </form>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
