@@ -175,7 +175,7 @@ const Index = () => {
       {/* Newsletter */}
       <section className="py-20 px-6 bg-gradient-to-br from-lbd-darker to-lbd-dark">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Join the LoneByDesign Community</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Join the guild</h2>
           <p className="text-lbd-muted mb-8 animate-on-scroll">
             Subscribe to our newsletter and never miss an update. Get the latest content, product launches, and exclusive offers directly to your inbox.
           </p>
