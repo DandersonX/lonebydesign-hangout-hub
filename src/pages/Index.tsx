@@ -82,7 +82,7 @@ const Index = () => {
       <section id="content" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore My World</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore</h2>
             <p className="text-lbd-muted max-w-2xl mx-auto">
               Dive into my personal music journey, daily blog posts, and shop for carefully curated products.
             </p>
