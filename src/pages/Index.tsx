@@ -1,8 +1,7 @@
-
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import BlurCard from "@/components/ui/BlurCard";
-import { ArrowRight, Gamepad, Music, Book, Tv, ShoppingBag } from "lucide-react";
+import { ArrowRight, Music, Book, ShoppingBag } from "lucide-react";
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -34,30 +33,9 @@ const Index = () => {
 
   const categories = [
     { 
-      title: "Gaming Zone", 
-      icon: Gamepad, 
-      description: "Discover the latest gaming news, reviews, and discussions.", 
-      link: "/gaming",
-      color: "from-purple-500 to-indigo-600" 
-    },
-    { 
-      title: "Anime Corner", 
-      icon: Tv, 
-      description: "Explore anime recommendations, reviews, and fan theories.", 
-      link: "/anime",
-      color: "from-red-500 to-pink-600" 
-    },
-    { 
-      title: "TV & Movies", 
-      icon: Tv, 
-      description: "Stay updated with TV shows, movies, and streaming content.", 
-      link: "/tv-shows",
-      color: "from-blue-500 to-cyan-600" 
-    },
-    { 
-      title: "Music Vibes", 
+      title: "My Music", 
       icon: Music, 
-      description: "Find new music, vinyl collections, and artist spotlights.", 
+      description: "Check out my latest music projects, upcoming releases, and behind-the-scenes content.", 
       link: "/music",
       color: "from-green-500 to-emerald-600" 
     },
@@ -91,7 +69,7 @@ const Index = () => {
             <span className="text-gradient">Design</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-            Your digital hangout for gaming, anime, TV shows, music, and more. Express yourself, discover new passions, and connect with like-minded enthusiasts.
+            Your digital hangout for my personal music blog, regular content updates, and a curated shop of unique items.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/blog" className="bg-lbd-accent hover:bg-lbd-accent/90 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
@@ -116,13 +94,13 @@ const Index = () => {
       <section id="content" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Our Universe</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore My World</h2>
             <p className="text-lbd-muted max-w-2xl mx-auto">
-              Dive into our carefully curated content spanning gaming, anime, TV shows, music, and our shop. There's something for everyone.
+              Dive into my personal music journey, daily blog posts, and shop for carefully curated products.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.map((category, index) => (
               <BlurCard 
                 key={category.title} 

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Instagram, Twitch, Twitter, Youtube } from "lucide-react";
+import { Instagram, Twitch, Twitter, Youtube } from "lucide-react";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -17,12 +17,9 @@ const Footer: React.FC = () => {
               <span className="text-gradient">Design</span>
             </Link>
             <p className="text-lbd-muted text-sm">
-              A cool hangout for gaming, anime, TV shows, music, and more.
+              A cool hangout for blog content, my personal music, and shop.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-lbd-muted hover:text-lbd-accent transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
               <a href="#" className="text-lbd-muted hover:text-lbd-accent transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
@@ -42,10 +39,7 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-white mb-4">Content</h3>
             <ul className="space-y-2">
               <li><Link to="/blog" className="text-lbd-muted hover:text-lbd-accent transition-colors">Blog</Link></li>
-              <li><Link to="/gaming" className="text-lbd-muted hover:text-lbd-accent transition-colors">Gaming</Link></li>
-              <li><Link to="/anime" className="text-lbd-muted hover:text-lbd-accent transition-colors">Anime</Link></li>
-              <li><Link to="/tv-shows" className="text-lbd-muted hover:text-lbd-accent transition-colors">TV Shows</Link></li>
-              <li><Link to="/music" className="text-lbd-muted hover:text-lbd-accent transition-colors">Music</Link></li>
+              <li><Link to="/music" className="text-lbd-muted hover:text-lbd-accent transition-colors">My Music</Link></li>
             </ul>
           </div>
 

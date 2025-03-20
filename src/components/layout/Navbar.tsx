@@ -13,10 +13,7 @@ const Navbar: React.FC = () => {
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
     { name: "Shop", path: "/shop" },
-    { name: "Gaming", path: "/gaming" },
-    { name: "Anime", path: "/anime" },
-    { name: "TV Shows", path: "/tv-shows" },
-    { name: "Music", path: "/music" },
+    { name: "My Music", path: "/music" },
   ];
 
   useEffect(() => {

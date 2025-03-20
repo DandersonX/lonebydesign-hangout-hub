@@ -10,9 +10,6 @@ import React, { useEffect } from "react";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
-import Gaming from "./pages/Gaming";
-import Anime from "./pages/Anime";
-import TvShows from "./pages/TvShows";
 import Music from "./pages/Music";
 import NotFound from "./pages/NotFound";
 
@@ -41,9 +38,6 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/shop" element={<Shop />} />
-                <Route path="/gaming" element={<Gaming />} />
-                <Route path="/anime" element={<Anime />} />
-                <Route path="/tv-shows" element={<TvShows />} />
                 <Route path="/music" element={<Music />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
